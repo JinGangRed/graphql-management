@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Management", "Management\Management.csproj", "{7CA095C9-30D6-4DC0-B94B-43E025D3F9EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{AB5690DF-13DA-4C77-9723-769002F71FF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLDomain", "GraphQLDomain\GraphQLDomain.csproj", "{2472CF2E-5462-43E5-A63B-EC2801700D41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CA095C9-30D6-4DC0-B94B-43E025D3F9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA095C9-30D6-4DC0-B94B-43E025D3F9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA095C9-30D6-4DC0-B94B-43E025D3F9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA095C9-30D6-4DC0-B94B-43E025D3F9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5690DF-13DA-4C77-9723-769002F71FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5690DF-13DA-4C77-9723-769002F71FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5690DF-13DA-4C77-9723-769002F71FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5690DF-13DA-4C77-9723-769002F71FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2472CF2E-5462-43E5-A63B-EC2801700D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2472CF2E-5462-43E5-A63B-EC2801700D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2472CF2E-5462-43E5-A63B-EC2801700D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2472CF2E-5462-43E5-A63B-EC2801700D41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08803B3D-0003-406E-BA6F-D15A3DBD71A9}
+	EndGlobalSection
+EndGlobal
