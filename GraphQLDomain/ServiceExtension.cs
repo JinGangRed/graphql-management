@@ -1,4 +1,5 @@
-﻿using GraphQL;
+﻿using Domain.Models;
+using GraphQL;
 using GraphQL.Http;
 using GraphQL.Types;
 using GraphQLDomain.Operations.Querys;
@@ -16,10 +17,24 @@ namespace GraphQLDomain
         {
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
             services.AddSingleton<IDocumentWriter, DocumentWriter>();
+            #region 基础类型
+            services.AddSingleton<BaseEntityInterface>();
+            //services.AddSingleton<Gender>();
+            //services.AddSingleton<GenderEnumType>();
+            services.AddSingleton<UserType>();
+            services.AddSingleton<CompanyType>();
+            services.AddSingleton<EmployeeType>();
+            
+            #endregion
+
+
+            #region Query类型
             services.AddSingleton<Query>();
             services.AddSingleton<AccountGroupQuery>();
-            services.AddSingleton<BaseEntityInterface>();
-            services.AddSingleton<UserTypes>();
+            services.AddSingleton<CompanyGroupQuery>();
+            services.AddSingleton<EmployeeGroupQuery>();
+            #endregion
+
             services.AddSingleton<ISchema,GraphSchema>();
         }
     }

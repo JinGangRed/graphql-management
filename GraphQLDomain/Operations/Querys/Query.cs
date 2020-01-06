@@ -11,6 +11,8 @@ namespace GraphQLDomain.Operations.Querys
         {
             Name = "Query";
             Field<AccountGroupQuery>("Account", resolve: context => new { });
+            Field<CompanyGroupQuery>("Company", resolve: context => new { });
+            Field<EmployeeGroupQuery>("Employee", resolve: context => new { });
         }
     }
 }

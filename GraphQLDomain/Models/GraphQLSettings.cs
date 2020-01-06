@@ -7,7 +7,7 @@ namespace GraphQLDomain.Models
 {
     public class GraphQLSettings
     {
-        public string Path { get; set; } = "api/graphql";
+        public string Path { get; set; } = "/api/graphql";
 
         public Func<HttpContext,IDictionary<string,object>> BuildUserContext { get; set; }
 

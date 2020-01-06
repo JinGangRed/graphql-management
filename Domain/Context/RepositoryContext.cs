@@ -1,6 +1,7 @@
 ﻿using Domain.Models;
 using Domain.SeedData;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +19,19 @@ namespace Domain.Context
 
         public DbSet<Company> Company { get; set; }
 
+        public DbSet<Employee> Emplyee { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Company>().HasData(new InitCompany().GetInitData());
-            //modelBuilder.Entity<User>().HasData(new InitUser().GetInitData());
+            modelBuilder.Entity<Employee>().Property(e => e.Gender)
+                .HasConversion(new EnumToStringConverter<Gender>());
+
+
+            modelBuilder.Entity<User>().HasData(new InitUser().GetInitData());
         }
 
     }

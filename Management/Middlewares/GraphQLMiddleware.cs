@@ -12,6 +12,7 @@ using System.IO;
 using GraphQL.Validation;
 using System.Net;
 using Microsoft.AspNetCore.Http.Features;
+using GraphQLDomain.Middlewares.ValidationRules;
 
 namespace Management.Middlewares
 {
@@ -58,7 +59,7 @@ namespace Management.Middlewares
                 options.OperationName = request?.OperationName;
                 options.Inputs = request?.Variables.ToInputs();
                 options.UserContext = settings.BuildUserContext?.Invoke(context);
-                //options.ValidationRules = DocumentValidator.CoreRules.Concat()
+                options.ValidationRules = DocumentValidator.CoreRules.Concat(new[] { new AuthValidationRules() });
                 options.EnableMetrics = settings.EnableMetrics;
             });
             await WriteResponseAsync(context, result);

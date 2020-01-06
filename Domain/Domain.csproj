@@ -15,6 +15,8 @@
     <Compile Remove="Migrations\20200104031541_AddCompany.Designer.cs" />
     <Compile Remove="Migrations\20200104034432_AddEntityDisplay.cs" />
     <Compile Remove="Migrations\20200104034432_AddEntityDisplay.Designer.cs" />
+    <Compile Remove="Migrations\20200106131116_RenamEmployee.cs" />
+    <Compile Remove="Migrations\20200106131116_RenamEmployee.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

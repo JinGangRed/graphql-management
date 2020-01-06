@@ -18,5 +18,7 @@ namespace Domain.Models
         public DateTime? UpdateTime { get; set; }
         [DisplayName("更新人")]
         public string UpdateBy { get; set; }
+        [DisplayName("数据状态")]
+        public EntityStatus Status { get; set; }
     }
 }

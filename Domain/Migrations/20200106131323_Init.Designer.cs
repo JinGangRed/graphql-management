@@ -4,14 +4,16 @@ using Domain.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Domain.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20200106131323_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -142,118 +144,6 @@ namespace Domain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Account = "2009106838",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 428, DateTimeKind.Local).AddTicks(6479),
-                            NickName = "咐只依戊",
-                            Password = "943581934",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Account = "2129452747",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(6561),
-                            NickName = "莲拟猪功椿",
-                            Password = "2122798020",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Account = "1266980299",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(6817),
-                            NickName = "膘喀惑净稻罗",
-                            Password = "1405651172",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Account = "857573810",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(6993),
-                            NickName = "绷冬查莆",
-                            Password = "544284063",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Account = "1940364501",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(7212),
-                            NickName = "众醚滦傀讫疼",
-                            Password = "646329307",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Account = "189012032",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(7524),
-                            NickName = "边勿搞谭",
-                            Password = "429077688",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Account = "1487230545",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(7715),
-                            NickName = "集妹棋怜缉急",
-                            Password = "1828771984",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Account = "59688374",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(8018),
-                            NickName = "力谅梁评饰秋",
-                            Password = "784235125",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Account = "575397392",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(8280),
-                            NickName = "缀阶以族硝猖彪",
-                            Password = "2026557700",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Account = "1770183886",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 6, 22, 36, 23, 436, DateTimeKind.Local).AddTicks(8576),
-                            NickName = "淋噪悔抚源画律",
-                            Password = "45548590",
-                            Status = 0,
-                            UpdateBy = "System"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Company", b =>

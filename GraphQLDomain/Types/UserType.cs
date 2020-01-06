@@ -6,9 +6,9 @@ using System;
 
 namespace GraphQLDomain.Types
 {
-    public class UserTypes: ObjectGraphType<User>
+    public class UserType: ObjectGraphType<User>
     {
-        public UserTypes()
+        public UserType()
         {
             Name = "User";
             Field(u => u.Id).Description(EntityHelper.GetFiledDescription<User>("Id"));

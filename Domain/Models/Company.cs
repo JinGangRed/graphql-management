@@ -16,5 +16,8 @@ namespace Domain.Models
         public Address Address { get; set; }
         [DisplayName("公司传真")]
         public string Fix { get; set; }
+
+        [DisplayName("员工")]
+        public ICollection<Employee> Emplyees { get; set; } = new List<Employee>();
     }
 }

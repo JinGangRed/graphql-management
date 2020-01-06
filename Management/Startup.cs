@@ -11,20 +11,17 @@ using GraphQLDomain.Models;
 using Management.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Management
 {
     public class Startup
     {
+        public static readonly string GraphQLEndPoint = "/api/graphql";
+        public static readonly string GraphiQLEndPoint = "/graphql";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -49,12 +46,6 @@ namespace Management
 
             services.ConfigureGraphQL();
             services.AddControllers();
-
-            //var container = new ContainerBuilder();
-            //container.Populate(services);
-            //return new AutofacServiceProvider(container.Build());
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,7 +56,7 @@ namespace Management
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseGraphiQl("/v1/graphql");
+            app.UseGraphiQl(GraphiQLEndPoint);
 
             app.UseHttpsRedirection();
 
@@ -78,8 +69,7 @@ namespace Management
                 {
                     User = ctx.User
                 },
-                Path="/api/graphql"
-
+                Path = GraphQLEndPoint
             });
             
             app.UseEndpoints(endpoints =>

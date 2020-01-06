@@ -13,11 +13,11 @@ namespace GraphQLDomain.Operations.Querys
         public AccountGroupQuery(RepositoryContext repository)
         {
             Name = "Account";
-            Field<ListGraphType<UserTypes>>().Name("AllUsers").Resolve(context =>
+            Field<ListGraphType<UserType>>().Name("AllUsers").Resolve(context =>
             {
                 return repository.Users.ToList();
             });
-            Field<UserTypes>().Name("FirstUser").Resolve(context =>
+            Field<UserType>().Name("FirstUser").Resolve(context =>
             {
                 return repository.Users.FirstOrDefault();
             });
