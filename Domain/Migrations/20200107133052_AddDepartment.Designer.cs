@@ -4,14 +4,16 @@ using Domain.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Domain.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20200107133052_AddDepartment")]
+    partial class AddDepartment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -193,9 +195,6 @@ namespace Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("NickName")
                         .HasColumnType("nvarchar(max)");
 
@@ -222,120 +221,110 @@ namespace Domain.Migrations
                         new
                         {
                             Id = 1,
-                            Account = "623306801",
+                            Account = "1681656358",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 524, DateTimeKind.Local).AddTicks(2752),
-                            Name = "沙嵌",
-                            NickName = "滕 样",
-                            Password = "972264640",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 923, DateTimeKind.Local).AddTicks(6960),
+                            NickName = "畅秽慷坍唁唁",
+                            Password = "1556965797",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 2,
-                            Account = "1102875294",
+                            Account = "866916355",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 529, DateTimeKind.Local).AddTicks(9737),
-                            Name = "殷哺攫",
-                            NickName = "傅 其",
-                            Password = "122197059",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 926, DateTimeKind.Local).AddTicks(9446),
+                            NickName = "儡垦芒攀螟",
+                            Password = "1470020148",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 3,
-                            Account = "1263351210",
+                            Account = "104638315",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(75),
-                            Name = "蔚炎瘁",
-                            NickName = "邹 臼装",
-                            Password = "2140270244",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 926, DateTimeKind.Local).AddTicks(9693),
+                            NickName = "蝉童洁派斩绽",
+                            Password = "1390887340",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 4,
-                            Account = "271858634",
+                            Account = "180223172",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(269),
-                            Name = "宇文埂",
-                            NickName = "魏 掀耀",
-                            Password = "737628214",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 926, DateTimeKind.Local).AddTicks(9928),
+                            NickName = "沂禁傍股碑",
+                            Password = "16804466",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 5,
-                            Account = "801082279",
+                            Account = "59512981",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(435),
-                            Name = "游鸣",
-                            NickName = "衡 珐",
-                            Password = "1637160057",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 927, DateTimeKind.Local).AddTicks(136),
+                            NickName = "吸狞幕赋枯",
+                            Password = "1890504126",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 6,
-                            Account = "1361782065",
+                            Account = "14396851",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(606),
-                            Name = "毛凤",
-                            NickName = "羿 蕾",
-                            Password = "388166285",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 927, DateTimeKind.Local).AddTicks(291),
+                            NickName = "赚檬煮截猪研",
+                            Password = "2056271021",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 7,
-                            Account = "2127501513",
+                            Account = "1456134447",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(750),
-                            Name = "严滩",
-                            NickName = "双 高",
-                            Password = "762573810",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 927, DateTimeKind.Local).AddTicks(460),
+                            NickName = "仰务倒添俞嘲表",
+                            Password = "756802015",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 8,
-                            Account = "1686467441",
+                            Account = "952004587",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(936),
-                            Name = "空荒",
-                            NickName = "巫 腆坑",
-                            Password = "1037347409",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 927, DateTimeKind.Local).AddTicks(681),
+                            NickName = "哮狼庸唇滁柬",
+                            Password = "497782678",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 9,
-                            Account = "1398929570",
+                            Account = "2072819600",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(1124),
-                            Name = "邓独",
-                            NickName = "冯 宅",
-                            Password = "869681718",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 927, DateTimeKind.Local).AddTicks(851),
+                            NickName = "夷碉困漏出",
+                            Password = "961883343",
                             Status = 0,
                             UpdateBy = "System"
                         },
                         new
                         {
                             Id = 10,
-                            Account = "447450067",
+                            Account = "1416843129",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 7, 22, 8, 13, 530, DateTimeKind.Local).AddTicks(1331),
-                            Name = "阎肛",
-                            NickName = "刁 经",
-                            Password = "2075286181",
+                            CreateTime = new DateTime(2020, 1, 7, 21, 30, 51, 927, DateTimeKind.Local).AddTicks(1045),
+                            NickName = "冶科唱午",
+                            Password = "1447387428",
                             Status = 0,
                             UpdateBy = "System"
                         });

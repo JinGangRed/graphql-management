@@ -20,5 +20,7 @@ namespace Domain.Models
         public string Password { get; set; }
         [DisplayName("昵称")]
         public string NickName { get; set; }
+        [DisplayName("姓名")]
+        public string Name { get; set; }
     }
 }

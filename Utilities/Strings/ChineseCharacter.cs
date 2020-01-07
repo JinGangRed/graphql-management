@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Utilities.Constants;
 
-namespace Domain.SeedData
+namespace Utilities.Strings
 {
-    public class InitHelper
+    public static partial class StringExtensions
     {
-        public static string GenerateChineseWord()
+        private static string GenerateChineseWord()
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             var rnd = new Random();
@@ -18,6 +19,11 @@ namespace Domain.SeedData
             return Encoding.GetEncoding("GB2312").GetString(bytesCode);
         }
 
+        public static string GenerateChineseName(bool hasSplit = true)
+        {
+            var random = new Random().Next(1,3);
+            return string.Concat(GetRandomSurname(), hasSplit?" ":"", GenerateChineseWord(random).Trim());
+        }
         public static string GenerateChineseWord(int num)
         {
             var words = "";
@@ -28,5 +34,11 @@ namespace Domain.SeedData
             return words;
         }
 
+        public static string GetRandomSurname()
+        {
+            Random random = new Random();
+            var surnames = ChineseSurname.GetSurname();
+            return surnames.ElementAt(random.Next(0, surnames.Count()));
+        }
     }
 }

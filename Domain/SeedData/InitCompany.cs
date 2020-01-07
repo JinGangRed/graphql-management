@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Utilities.Strings;
 
 namespace Domain.SeedData
 {
@@ -17,7 +18,7 @@ namespace Domain.SeedData
                     Id = i + 1,
                     CreateBy = "System",
                     UpdateBy = "System",
-                    Name = InitHelper.GenerateChineseWord(new Random().Next(12, 20)),
+                    Name = StringExtensions.GenerateChineseName(),
                     Address = new Address
                     {
                         City = "长沙",
@@ -26,9 +27,9 @@ namespace Domain.SeedData
                         Region = "华南",
                         Street = "12号"
                     },
-                    Fix = new Random().Next(100000,999999).ToString(),
+                    Fix = new Random().Next(100000, 999999).ToString(),
                     CreateTime = DateTime.Now,
-                }); ;
+                });
             }
             return companies;
         }

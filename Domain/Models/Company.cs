@@ -8,6 +8,7 @@ namespace Domain.Models
 {
     public partial class Company : BaseEntity
     {
+        [DisplayName("编号")]
         public int Id { get; set; }
         [DisplayName("公司名称")]
         [Required]

@@ -36,7 +36,7 @@ namespace Management.Controllers
                 options.Query = query?.Query;
                 options.OperationName = query?.OperationName;
                 options.Inputs = query?.Variables.ToInputs();
-                //options.UserContext = HttpContext.User as GraphQLUserContext;
+                //options.UserContext = HttpContext.User;
                 options.ValidationRules = DocumentValidator.CoreRules.Concat(new[] { new AuthValidationRules() });
             });
             if(result.Errors?.Count > 0)

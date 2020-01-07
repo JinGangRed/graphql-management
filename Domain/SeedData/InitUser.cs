@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Utilities.Strings;
 
 namespace Domain.SeedData
 {
@@ -20,12 +21,11 @@ namespace Domain.SeedData
                     CreateBy = "System",
                     UpdateBy = "System",
                     CreateTime = DateTime.Now,
-                    NickName = InitHelper.GenerateChineseWord(new Random().Next(4, 8))
+                    NickName = StringExtensions.GenerateChineseName(),
+                    Name = StringExtensions.GenerateChineseName(false)
                 }); 
             }
             return users;
         }
-
-
     }
 }

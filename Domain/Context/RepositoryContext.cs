@@ -29,7 +29,8 @@ namespace Domain.Context
         {
             modelBuilder.Entity<Employee>().Property(e => e.Gender)
                 .HasConversion(new EnumToStringConverter<Gender>());
-
+            modelBuilder.Entity<CompanyDepartment>()
+                .HasKey(c => new { c.DepartmentId, c.CompanyId });
 
             modelBuilder.Entity<User>().HasData(new InitUser().GetInitData());
         }
