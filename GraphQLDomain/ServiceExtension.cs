@@ -19,8 +19,7 @@ namespace GraphQLDomain
             services.AddSingleton<IDocumentWriter, DocumentWriter>();
             #region 基础类型
             services.AddSingleton<BaseEntityInterface>();
-            //services.AddSingleton<Gender>();
-            //services.AddSingleton<GenderEnumType>();
+            services.AddSingleton<GenderEnumType>();
             services.AddSingleton<UserType>();
             services.AddSingleton<CompanyType>();
             services.AddSingleton<EmployeeType>();

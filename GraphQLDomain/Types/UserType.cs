@@ -3,6 +3,7 @@ using GraphQL;
 using GraphQL.Types;
 using GraphQLDomain.Utils;
 using System;
+using Utilities.Entity;
 
 namespace GraphQLDomain.Types
 {

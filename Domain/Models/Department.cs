@@ -13,6 +13,6 @@ namespace Domain.Models
         public string DepartmentNo { get; set; }
         
         [DisplayName("部门员工")]
-        public IEnumerable<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual IEnumerable<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

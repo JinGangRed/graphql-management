@@ -39,7 +39,8 @@ namespace GraphQLDomain.Middlewares.ValidationRules
             {
                 var user = Context.UserContext as GraphQLUserContext;
                 var fieldDef = Context.TypeInfo.GetFieldDef();
-                if (fieldDef.RequirePermissions() && fieldDef.CanAccess(user.User?.Claims))
+                
+                if (fieldDef != null && fieldDef.RequirePermissions() && fieldDef.CanAccess(user.User?.Claims))
                 {
                     Context.ReportError(new ValidationError(
                         originalQuery: Context.OriginalQuery,

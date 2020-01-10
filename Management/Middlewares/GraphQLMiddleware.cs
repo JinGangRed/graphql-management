@@ -59,7 +59,7 @@ namespace Management.Middlewares
                 options.OperationName = request?.OperationName;
                 options.Inputs = request?.Variables.ToInputs();
                 options.UserContext = settings.BuildUserContext?.Invoke(context);
-                options.ValidationRules = DocumentValidator.CoreRules.Concat(new[] { new AuthValidationRules() });
+                //options.ValidationRules = DocumentValidator.CoreRules.Concat(new[] { new AuthValidationRules() });
                 options.EnableMetrics = settings.EnableMetrics;
             });
             await WriteResponseAsync(context, result);

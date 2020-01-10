@@ -11,9 +11,9 @@ namespace GraphQLDomain.Operations.Querys
         public EmployeeGroupQuery(RepositoryContext repository)
         {
             Name = "Employees";
-            Field<ListGraphType<EmployeeType>>().Name("AllEmployee").Resolve(context =>
+            Field<ListGraphType<EmployeeType>>().Name("AllEmployees").Resolve(context =>
             {
-                return repository.Emplyee.ToList();
+                return repository.Emplyee.AsEnumerable();
             });
         }
     }

@@ -12,8 +12,8 @@ namespace Domain.Models
         [DisplayName("部门ID")]
         public int DepartmentId { get; set; }
         [DisplayName("公司")]
-        public Company Company { get; set; }
+        public virtual Company Company { get; set; }
         [DisplayName("部门")]
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

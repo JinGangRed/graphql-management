@@ -15,10 +15,10 @@ namespace Domain.Models
         [DisplayName("性别")]
         public Gender Gender { get; set; }
         [DisplayName("员工公司")]
-        public Company Company { get; set; } = new Company();
+        public virtual Company Company { get; set; } = new Company();
         [DisplayName("部门编号")]
         public int DepartmentId { get; set; }
         [DisplayName("所在部门")]
-        public Department Department { get; set; } = new Department();
+        public virtual Department Department { get; set; } = new Department();
     }
 }

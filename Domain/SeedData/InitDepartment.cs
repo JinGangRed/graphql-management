@@ -6,24 +6,23 @@ using Utilities.Strings;
 
 namespace Domain.SeedData
 {
-    public class InitCompany
+    public class InitDepartment
     {
-        public IEnumerable<Company> GetInitData(int num = 10)
+        public IEnumerable<Department> GetInitData(int num = 10)
         {
-            var companies = new List<Company>();
+            var departments = new List<Department>();
             for (int i = 0; i < num; i++)
             {
-                companies.Add(new Company
+                departments.Add(new Department
                 {
                     Id = i + 1,
                     CreateBy = "System",
                     UpdateBy = "System",
                     Name = StringExtensions.GenerateChineseName(),
-                    Fix = new Random().Next(100000, 999999).ToString(),
                     CreateTime = DateTime.Now,
                 });
             }
-            return companies;
+            return departments;
         }
     }
 }

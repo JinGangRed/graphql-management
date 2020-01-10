@@ -14,11 +14,11 @@ namespace Domain.Models
         [Required]
         public string Name { get; set; }
         [DisplayName("公司地址")]
-        public Address Address { get; set; }
+        public virtual Address Address { get; set; }
         [DisplayName("公司传真")]
         public string Fix { get; set; }
 
         [DisplayName("员工")]
-        public ICollection<Employee> Emplyees { get; set; } = new List<Employee>();
+        public virtual ICollection<Employee> Emplyees { get; set; } = new List<Employee>();
     }
 }

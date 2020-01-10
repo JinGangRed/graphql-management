@@ -4,6 +4,7 @@ using GraphQLDomain.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Utilities.Entity;
 
 namespace GraphQLDomain.Types
 {
@@ -13,7 +14,7 @@ namespace GraphQLDomain.Types
         {
             Name = "Company";
             Field(u => u.Id).Description(EntityHelper.GetFiledDescription<Company>("Id"));
-            Field(u => u.Name).Description(EntityHelper.GetFiledDescription<Company>("Name"));
+            Field(u => u.Name,nullable:false).Description(EntityHelper.GetFiledDescription<Company>("Name"));
             //Field(u => u.Address).Description(EntityHelper.GetFiledDescription<Company>("Address"))
             //    .Resolve(context =>
             //    {

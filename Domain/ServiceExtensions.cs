@@ -35,7 +35,7 @@ namespace Domain
             }
             services.AddDbContext<RepositoryContext>(options =>
             {
-                options.UseSqlServer(connection, optionsAction =>
+                options.UseLazyLoadingProxies().UseSqlServer(connection, optionsAction =>
                 {
                     var assembly = Assembly.GetAssembly(typeof(RepositoryContext)).GetName().Name;
                     optionsAction.MigrationsAssembly(assembly);
