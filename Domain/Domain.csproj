@@ -5,21 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200104024514_Init.cs" />
-    <Compile Remove="Migrations\20200104024514_Init.Designer.cs" />
-    <Compile Remove="Migrations\20200104025955_AddBaseEntity.cs" />
-    <Compile Remove="Migrations\20200104025955_AddBaseEntity.Designer.cs" />
-    <Compile Remove="Migrations\20200104030552_AddBaseEntity1.cs" />
-    <Compile Remove="Migrations\20200104030552_AddBaseEntity1.Designer.cs" />
-    <Compile Remove="Migrations\20200104031541_AddCompany.cs" />
-    <Compile Remove="Migrations\20200104031541_AddCompany.Designer.cs" />
-    <Compile Remove="Migrations\20200104034432_AddEntityDisplay.cs" />
-    <Compile Remove="Migrations\20200104034432_AddEntityDisplay.Designer.cs" />
-    <Compile Remove="Migrations\20200106131116_RenamEmployee.cs" />
-    <Compile Remove="Migrations\20200106131116_RenamEmployee.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.0" />

@@ -9,6 +9,12 @@ namespace Utilities.Entity
 {
     public static class EntityHelper
     {
+        /// <summary>
+        /// 获取字段的描述
+        /// </summary>
+        /// <typeparam name="TSourceType"></typeparam>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static string GetFiledDescription<TSourceType>(string name)
         {
             var type = typeof(TSourceType);
@@ -31,8 +37,11 @@ namespace Utilities.Entity
             }
             return "";
         }
-
-
+        /// <summary>
+        /// 获取枚举的描述
+        /// </summary>
+        /// <param name="enum"></param>
+        /// <returns></returns>
         public static string GetEnumDescription(this Enum @enum)
         {
             var type = @enum.GetType();
@@ -40,7 +49,7 @@ namespace Utilities.Entity
             var fieldInfo = type.GetField(@enum.ToString());
 
             var attributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute));
-            if(attributes == null || attributes.Count() > 0)
+            if(attributes == null || attributes.Count() <= 0)
             {
                 return @enum.ToString();
             }

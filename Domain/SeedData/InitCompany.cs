@@ -18,7 +18,7 @@ namespace Domain.SeedData
                     Id = i + 1,
                     CreateBy = "System",
                     UpdateBy = "System",
-                    Name = StringExtensions.GenerateChineseName(),
+                    Name = ChineseCharacter.GenerateChineseName(),
                     Fix = new Random().Next(100000, 999999).ToString(),
                     CreateTime = DateTime.Now,
                 });

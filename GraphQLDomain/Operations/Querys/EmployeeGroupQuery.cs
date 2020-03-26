@@ -13,7 +13,7 @@ namespace GraphQLDomain.Operations.Querys
             Name = "Employees";
             Field<ListGraphType<EmployeeType>>().Name("AllEmployees").Resolve(context =>
             {
-                return repository.Emplyee.AsEnumerable();
+                return repository.Employee.AsEnumerable();
             });
         }
     }

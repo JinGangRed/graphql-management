@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Models
 {
@@ -6,6 +7,7 @@ namespace Domain.Models
     {
         [DisplayName("编号")]
         public int Id { get; set; }
+        [Required(ErrorMessage ="员工姓名不能为空")]
         [DisplayName("员工名")]
         public string Name { get; set; }
         [DisplayName("员工号")]

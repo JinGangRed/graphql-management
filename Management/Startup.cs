@@ -2,9 +2,11 @@ using Domain;
 using GraphiQl;
 using GraphQLDomain;
 using GraphQLDomain.Models;
+using Management.Extensions;
 using Management.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,10 +38,22 @@ namespace Management
             {
                 options.AllowSynchronousIO = true;
             });
+
+            services.ConfigureAuthentication(Configuration);
             services.ConfigDBContext(Configuration);
 
             services.ConfigureGraphQL();
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters
+                    .Add<ValidateModelActionFilter>();
+            });
+            //// ÷ÿµ„
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+            services.ConfigureSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +63,7 @@ namespace Management
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.ConfigureUseSwagger();
             app.UseGraphiQl(GraphiQLEndPoint);
 
             app.UseHttpsRedirection();
@@ -70,6 +84,7 @@ namespace Management
             {
                 endpoints.MapControllers();
             });
+            app.UseRequestMiddleware();
         }
     }
 }

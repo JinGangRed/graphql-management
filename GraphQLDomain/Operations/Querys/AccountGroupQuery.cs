@@ -15,11 +15,11 @@ namespace GraphQLDomain.Operations.Querys
             Name = "Account";
             Field<ListGraphType<UserType>>().Name("AllUsers").Resolve(context =>
             {
-                return repository.Users.ToList();
+                return repository.User.ToList();
             });
             Field<UserType>().Name("FirstUser").Resolve(context =>
             {
-                return repository.Users.FirstOrDefault();
+                return repository.User.FirstOrDefault();
             });
         }
     }

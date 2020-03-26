@@ -9,8 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLDomain", "GraphQLDomain\GraphQLDomain.csproj", "{2472CF2E-5462-43E5-A63B-EC2801700D41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{4D03A2D2-7555-4B3F-A8FD-4C4CBC0332A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "Utilities\Utilities.csproj", "{4D03A2D2-7555-4B3F-A8FD-4C4CBC0332A0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "Extension\Extensions.csproj", "{89404FD0-CEE4-47AA-BCBA-9ED1EED16F3B}"
+EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +36,14 @@ Global
 		{4D03A2D2-7555-4B3F-A8FD-4C4CBC0332A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D03A2D2-7555-4B3F-A8FD-4C4CBC0332A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D03A2D2-7555-4B3F-A8FD-4C4CBC0332A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89404FD0-CEE4-47AA-BCBA-9ED1EED16F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89404FD0-CEE4-47AA-BCBA-9ED1EED16F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89404FD0-CEE4-47AA-BCBA-9ED1EED16F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89404FD0-CEE4-47AA-BCBA-9ED1EED16F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11EEE541-653D-4016-BC17-04BBB235B093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EEE541-653D-4016-BC17-04BBB235B093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EEE541-653D-4016-BC17-04BBB235B093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EEE541-653D-4016-BC17-04BBB235B093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

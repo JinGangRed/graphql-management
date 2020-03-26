@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Domain.Migrations
 {
-    public partial class init : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,14 +18,16 @@ namespace Domain.Migrations
                     UpdateTime = table.Column<DateTime>(nullable: true),
                     UpdateBy = table.Column<string>(nullable: true),
                     Status = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
-                    Address_Country = table.Column<string>(nullable: true),
-                    Address_Province = table.Column<string>(nullable: true),
-                    Address_City = table.Column<string>(nullable: true),
-                    Address_Region = table.Column<string>(nullable: true),
-                    Address_Street = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 125, nullable: false),
+                    Address_Country_Name = table.Column<string>(nullable: true),
+                    Address_Country_Address = table.Column<string>(nullable: true),
+                    Address_Country_Continent = table.Column<string>(nullable: true),
+                    Address_Province = table.Column<string>(maxLength: 25, nullable: true),
+                    Address_City = table.Column<string>(maxLength: 25, nullable: true),
+                    Address_Region = table.Column<string>(maxLength: 500, nullable: true),
+                    Address_Street = table.Column<string>(maxLength: 500, nullable: true),
                     Address_DetailAddress = table.Column<string>(nullable: true),
-                    Fix = table.Column<string>(nullable: true)
+                    Fix = table.Column<string>(maxLength: 25, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,7 +54,7 @@ namespace Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "User",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -69,7 +71,7 @@ namespace Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -102,7 +104,7 @@ namespace Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Emplyee",
+                name: "Employee",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -112,7 +114,7 @@ namespace Domain.Migrations
                     UpdateTime = table.Column<DateTime>(nullable: true),
                     UpdateBy = table.Column<string>(nullable: true),
                     Status = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     EmployeeNo = table.Column<string>(nullable: true),
                     Contact = table.Column<string>(nullable: true),
                     Gender = table.Column<string>(nullable: false),
@@ -121,15 +123,15 @@ namespace Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Emplyee", x => x.Id);
+                    table.PrimaryKey("PK_Employee", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Emplyee_Company_CompanyId",
+                        name: "FK_Employee_Company_CompanyId",
                         column: x => x.CompanyId,
                         principalTable: "Company",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Emplyee_Department_DepartmentId",
+                        name: "FK_Employee_Department_DepartmentId",
                         column: x => x.DepartmentId,
                         principalTable: "Department",
                         principalColumn: "Id",
@@ -141,34 +143,39 @@ namespace Domain.Migrations
                 columns: new[] { "Id", "CreateBy", "CreateTime", "Fix", "Name", "Status", "UpdateBy" },
                 values: new object[,]
                 {
-                    { 1, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(6654), "825928", "夏协侦", 0, "System" },
-                    { 9, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7544), "254041", "张馒", 0, "System" },
-                    { 8, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7469), "452702", "祝数韭", 0, "System" },
-                    { 7, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7372), "192354", "诸哉", 0, "System" },
-                    { 6, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7293), "127584", "郤棕", 0, "System" },
-                    { 10, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7640), "847251", "衡精宵", 0, "System" },
-                    { 4, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7050), "260953", "嵇雍蝇", 0, "System" },
-                    { 3, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(6952), "924850", "房贺", 0, "System" },
-                    { 2, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(6868), "833503", "郦烤", 0, "System" },
-                    { 5, "System", new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7146), "993529", "钱治酬", 0, "System" }
+                    { 1, "System", new DateTime(2020, 3, 26, 17, 2, 0, 282, DateTimeKind.Local).AddTicks(1258), "539855", "宦梦月", 0, "System" },
+                    { 2, "System", new DateTime(2020, 3, 26, 17, 2, 0, 282, DateTimeKind.Local).AddTicks(8702), "513756", "平恩宇", 0, "System" },
+                    { 3, "System", new DateTime(2020, 3, 26, 17, 2, 0, 283, DateTimeKind.Local).AddTicks(5243), "224060", "和恩蓉", 0, "System" },
+                    { 4, "System", new DateTime(2020, 3, 26, 17, 2, 0, 284, DateTimeKind.Local).AddTicks(2700), "123664", "那振淑", 0, "System" },
+                    { 5, "System", new DateTime(2020, 3, 26, 17, 2, 0, 285, DateTimeKind.Local).AddTicks(158), "381607", "储婷", 0, "System" },
+                    { 6, "System", new DateTime(2020, 3, 26, 17, 2, 0, 285, DateTimeKind.Local).AddTicks(6559), "665295", "葛金", 0, "System" },
+                    { 7, "System", new DateTime(2020, 3, 26, 17, 2, 0, 286, DateTimeKind.Local).AddTicks(3415), "360072", "令狐子思", 0, "System" },
+                    { 8, "System", new DateTime(2020, 3, 26, 17, 2, 0, 286, DateTimeKind.Local).AddTicks(9878), "584207", "谭钰宇", 0, "System" },
+                    { 9, "System", new DateTime(2020, 3, 26, 17, 2, 0, 288, DateTimeKind.Local).AddTicks(356), "590559", "施旭雨", 0, "System" },
+                    { 10, "System", new DateTime(2020, 3, 26, 17, 2, 0, 288, DateTimeKind.Local).AddTicks(9418), "501501", "苍淑", 0, "System" }
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "Account", "CreateBy", "CreateTime", "Name", "NickName", "Password", "Status", "UpdateBy" },
+                table: "Department",
+                columns: new[] { "Id", "CreateBy", "CreateTime", "DepartmentNo", "Name", "Status", "UpdateBy" },
                 values: new object[,]
                 {
-                    { 9, "1179084547", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(2344), "糜袍", "荀窿", "1204786089", 0, "System" },
-                    { 1, "475942205", "System", new DateTime(2020, 1, 9, 23, 16, 48, 840, DateTimeKind.Local).AddTicks(6797), "任庐", "霍斧身", "1032206623", 0, "System" },
-                    { 2, "201407648", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(718), "施浩", "危巫", "1823036751", 0, "System" },
-                    { 3, "1126270651", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(967), "卜橇稼", "卜帝", "1120416200", 0, "System" },
-                    { 4, "129812945", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1186), "别跑窒", "勾隐", "519693159", 0, "System" },
-                    { 5, "126127557", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1477), "诸揭", "桂颂蠕", "628971930", 0, "System" },
-                    { 6, "957595547", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1628), "赵殊", "步旺抒", "1703519036", 0, "System" },
-                    { 7, "1631966449", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1999), "蓝上写", "钮概矛", "1488771521", 0, "System" },
-                    { 8, "720710273", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(2183), "汲邯", "成馁捧", "2062638398", 0, "System" },
-                    { 10, "750791301", "System", new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(2638), "訾添鞘", "韦淀", "2131813845", 0, "System" }
+                    { 9, "System", new DateTime(2020, 3, 26, 17, 2, 0, 297, DateTimeKind.Local).AddTicks(1992), null, "郁晨明", 0, "System" },
+                    { 8, "System", new DateTime(2020, 3, 26, 17, 2, 0, 296, DateTimeKind.Local).AddTicks(4824), null, "钮炅", 0, "System" },
+                    { 7, "System", new DateTime(2020, 3, 26, 17, 2, 0, 295, DateTimeKind.Local).AddTicks(3008), null, "栾琳海", 0, "System" },
+                    { 6, "System", new DateTime(2020, 3, 26, 17, 2, 0, 294, DateTimeKind.Local).AddTicks(5926), null, "巩梓", 0, "System" },
+                    { 1, "System", new DateTime(2020, 3, 26, 17, 2, 0, 290, DateTimeKind.Local).AddTicks(9581), null, "马静艺", 0, "System" },
+                    { 4, "System", new DateTime(2020, 3, 26, 17, 2, 0, 293, DateTimeKind.Local).AddTicks(2013), null, "巩金承", 0, "System" },
+                    { 3, "System", new DateTime(2020, 3, 26, 17, 2, 0, 292, DateTimeKind.Local).AddTicks(5019), null, "夏侯瑞晓", 0, "System" },
+                    { 2, "System", new DateTime(2020, 3, 26, 17, 2, 0, 291, DateTimeKind.Local).AddTicks(7997), null, "糜子天", 0, "System" },
+                    { 10, "System", new DateTime(2020, 3, 26, 17, 2, 0, 297, DateTimeKind.Local).AddTicks(8798), null, "邰嘉海", 0, "System" },
+                    { 5, "System", new DateTime(2020, 3, 26, 17, 2, 0, 293, DateTimeKind.Local).AddTicks(8927), null, "巴紫", 0, "System" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "User",
+                columns: new[] { "Id", "Account", "CreateBy", "CreateTime", "Name", "NickName", "Password", "Status", "UpdateBy" },
+                values: new object[] { 1, "Admin", "System", new DateTime(2020, 3, 26, 17, 2, 0, 148, DateTimeKind.Local).AddTicks(7084), "何骄", "牛明欣", "Admin", 0, "System" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_CompanyDepartment_CompanyId",
@@ -176,13 +183,13 @@ namespace Domain.Migrations
                 column: "CompanyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Emplyee_CompanyId",
-                table: "Emplyee",
+                name: "IX_Employee_CompanyId",
+                table: "Employee",
                 column: "CompanyId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Emplyee_DepartmentId",
-                table: "Emplyee",
+                name: "IX_Employee_DepartmentId",
+                table: "Employee",
                 column: "DepartmentId");
         }
 
@@ -192,10 +199,10 @@ namespace Domain.Migrations
                 name: "CompanyDepartment");
 
             migrationBuilder.DropTable(
-                name: "Emplyee");
+                name: "Employee");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "User");
 
             migrationBuilder.DropTable(
                 name: "Company");

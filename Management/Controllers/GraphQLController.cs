@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Extensions.Attribute;
 using GraphQL;
 using GraphQL.Types;
 using GraphQL.Validation;
@@ -25,7 +26,7 @@ namespace Management.Controllers
             this.executer = executer;
             this.schema = schema;
         }
-
+        [HiddenAPI]
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] GraphQLRequest query)
         {

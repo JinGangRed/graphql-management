@@ -20,15 +20,15 @@ namespace GraphQLDomain.Operations.Querys
 
             Field<ListGraphType<EmployeeType>>().Name("Employees").Resolve(context =>
             {
-                return repository.Emplyee.AsEnumerable();
+                return repository.Employee.AsEnumerable();
             });
             Field<ListGraphType<UserType>>().Name("AllUsers").Resolve(context =>
             {
-                return repository.Users.AsEnumerable();
+                return repository.User.AsEnumerable();
             });
             Field<UserType>().Name("FirstUser").Resolve(context =>
             {
-                return repository.Users.FirstOrDefault();
+                return repository.User.FirstOrDefault();
             });
         }
     }

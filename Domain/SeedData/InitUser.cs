@@ -8,23 +8,20 @@ namespace Domain.SeedData
 {
     public class InitUser
     {
-        public IEnumerable<User> GetInitData(int num = 10)
+        public IEnumerable<User> GetInitData()
         {
             var users = new List<User>();
-            for (int i = 0; i < num; i++)
+            users.Add(new User
             {
-                users.Add(new User
-                {
-                    Id = i + 1,
-                    Account = new Random().Next(100000, int.MaxValue).ToString(),
-                    Password = new Random().Next(100000, int.MaxValue).ToString(),
-                    CreateBy = "System",
-                    UpdateBy = "System",
-                    CreateTime = DateTime.Now,
-                    NickName = StringExtensions.GenerateChineseName(),
-                    Name = StringExtensions.GenerateChineseName(false)
-                }); 
-            }
+                Id =  1,
+                Account = "Admin",
+                Password = "Admin",
+                CreateBy = "System",
+                UpdateBy = "System",
+                CreateTime = DateTime.Now,
+                NickName = ChineseCharacter.GenerateChineseName(),
+                Name = ChineseCharacter.GenerateChineseName()
+            });
             return users;
         }
     }

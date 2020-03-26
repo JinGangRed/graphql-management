@@ -15,11 +15,11 @@ namespace Domain.Context
         {
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> User { get; set; }
 
         public DbSet<Company> Company { get; set; }
 
-        public DbSet<Employee> Emplyee { get; set; }
+        public DbSet<Employee> Employee { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

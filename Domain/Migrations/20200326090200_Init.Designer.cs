@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Domain.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20200109151649_init")]
-    partial class init
+    [Migration("20200326090200_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -36,11 +36,13 @@ namespace Domain.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Fix")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(25);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(125)")
+                        .HasMaxLength(125);
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -61,9 +63,9 @@ namespace Domain.Migrations
                         {
                             Id = 1,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(6654),
-                            Fix = "825928",
-                            Name = "夏协侦",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 282, DateTimeKind.Local).AddTicks(1258),
+                            Fix = "539855",
+                            Name = "宦梦月",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -71,9 +73,9 @@ namespace Domain.Migrations
                         {
                             Id = 2,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(6868),
-                            Fix = "833503",
-                            Name = "郦烤",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 282, DateTimeKind.Local).AddTicks(8702),
+                            Fix = "513756",
+                            Name = "平恩宇",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -81,9 +83,9 @@ namespace Domain.Migrations
                         {
                             Id = 3,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(6952),
-                            Fix = "924850",
-                            Name = "房贺",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 283, DateTimeKind.Local).AddTicks(5243),
+                            Fix = "224060",
+                            Name = "和恩蓉",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -91,9 +93,9 @@ namespace Domain.Migrations
                         {
                             Id = 4,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7050),
-                            Fix = "260953",
-                            Name = "嵇雍蝇",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 284, DateTimeKind.Local).AddTicks(2700),
+                            Fix = "123664",
+                            Name = "那振淑",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -101,9 +103,9 @@ namespace Domain.Migrations
                         {
                             Id = 5,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7146),
-                            Fix = "993529",
-                            Name = "钱治酬",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 285, DateTimeKind.Local).AddTicks(158),
+                            Fix = "381607",
+                            Name = "储婷",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -111,9 +113,9 @@ namespace Domain.Migrations
                         {
                             Id = 6,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7293),
-                            Fix = "127584",
-                            Name = "郤棕",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 285, DateTimeKind.Local).AddTicks(6559),
+                            Fix = "665295",
+                            Name = "葛金",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -121,9 +123,9 @@ namespace Domain.Migrations
                         {
                             Id = 7,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7372),
-                            Fix = "192354",
-                            Name = "诸哉",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 286, DateTimeKind.Local).AddTicks(3415),
+                            Fix = "360072",
+                            Name = "令狐子思",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -131,9 +133,9 @@ namespace Domain.Migrations
                         {
                             Id = 8,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7469),
-                            Fix = "452702",
-                            Name = "祝数韭",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 286, DateTimeKind.Local).AddTicks(9878),
+                            Fix = "584207",
+                            Name = "谭钰宇",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -141,9 +143,9 @@ namespace Domain.Migrations
                         {
                             Id = 9,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7544),
-                            Fix = "254041",
-                            Name = "张馒",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 288, DateTimeKind.Local).AddTicks(356),
+                            Fix = "590559",
+                            Name = "施旭雨",
                             Status = 0,
                             UpdateBy = "System"
                         },
@@ -151,9 +153,9 @@ namespace Domain.Migrations
                         {
                             Id = 10,
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 848, DateTimeKind.Local).AddTicks(7640),
-                            Fix = "847251",
-                            Name = "衡精宵",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 288, DateTimeKind.Local).AddTicks(9418),
+                            Fix = "501501",
+                            Name = "苍淑",
                             Status = 0,
                             UpdateBy = "System"
                         });
@@ -224,6 +226,98 @@ namespace Domain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Department");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 290, DateTimeKind.Local).AddTicks(9581),
+                            Name = "马静艺",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 291, DateTimeKind.Local).AddTicks(7997),
+                            Name = "糜子天",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 292, DateTimeKind.Local).AddTicks(5019),
+                            Name = "夏侯瑞晓",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 293, DateTimeKind.Local).AddTicks(2013),
+                            Name = "巩金承",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 293, DateTimeKind.Local).AddTicks(8927),
+                            Name = "巴紫",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 294, DateTimeKind.Local).AddTicks(5926),
+                            Name = "巩梓",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 295, DateTimeKind.Local).AddTicks(3008),
+                            Name = "栾琳海",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 296, DateTimeKind.Local).AddTicks(4824),
+                            Name = "钮炅",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 297, DateTimeKind.Local).AddTicks(1992),
+                            Name = "郁晨明",
+                            Status = 0,
+                            UpdateBy = "System"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreateBy = "System",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 297, DateTimeKind.Local).AddTicks(8798),
+                            Name = "邰嘉海",
+                            Status = 0,
+                            UpdateBy = "System"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Employee", b =>
@@ -257,6 +351,7 @@ namespace Domain.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
@@ -275,7 +370,7 @@ namespace Domain.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Emplyee");
+                    b.ToTable("Employee");
                 });
 
             modelBuilder.Entity("Domain.Models.User", b =>
@@ -320,126 +415,18 @@ namespace Domain.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Account = "475942205",
+                            Account = "Admin",
                             CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 840, DateTimeKind.Local).AddTicks(6797),
-                            Name = "任庐",
-                            NickName = "霍斧身",
-                            Password = "1032206623",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Account = "201407648",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(718),
-                            Name = "施浩",
-                            NickName = "危巫",
-                            Password = "1823036751",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Account = "1126270651",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(967),
-                            Name = "卜橇稼",
-                            NickName = "卜帝",
-                            Password = "1120416200",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Account = "129812945",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1186),
-                            Name = "别跑窒",
-                            NickName = "勾隐",
-                            Password = "519693159",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Account = "126127557",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1477),
-                            Name = "诸揭",
-                            NickName = "桂颂蠕",
-                            Password = "628971930",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Account = "957595547",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1628),
-                            Name = "赵殊",
-                            NickName = "步旺抒",
-                            Password = "1703519036",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Account = "1631966449",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(1999),
-                            Name = "蓝上写",
-                            NickName = "钮概矛",
-                            Password = "1488771521",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Account = "720710273",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(2183),
-                            Name = "汲邯",
-                            NickName = "成馁捧",
-                            Password = "2062638398",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Account = "1179084547",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(2344),
-                            Name = "糜袍",
-                            NickName = "荀窿",
-                            Password = "1204786089",
-                            Status = 0,
-                            UpdateBy = "System"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Account = "750791301",
-                            CreateBy = "System",
-                            CreateTime = new DateTime(2020, 1, 9, 23, 16, 48, 846, DateTimeKind.Local).AddTicks(2638),
-                            Name = "訾添鞘",
-                            NickName = "韦淀",
-                            Password = "2131813845",
+                            CreateTime = new DateTime(2020, 3, 26, 17, 2, 0, 148, DateTimeKind.Local).AddTicks(7084),
+                            Name = "何骄",
+                            NickName = "牛明欣",
+                            Password = "Admin",
                             Status = 0,
                             UpdateBy = "System"
                         });
@@ -455,22 +442,23 @@ namespace Domain.Migrations
                                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                             b1.Property<string>("City")
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.Property<string>("Country")
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(25)")
+                                .HasMaxLength(25);
 
                             b1.Property<string>("DetailAddress")
                                 .HasColumnType("nvarchar(max)");
 
                             b1.Property<string>("Province")
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(25)")
+                                .HasMaxLength(25);
 
                             b1.Property<string>("Region")
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(500)")
+                                .HasMaxLength(500);
 
                             b1.Property<string>("Street")
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(500)")
+                                .HasMaxLength(500);
 
                             b1.HasKey("CompanyId");
 
@@ -478,6 +466,30 @@ namespace Domain.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("CompanyId");
+
+                            b1.OwnsOne("Domain.Models.Country", "Country", b2 =>
+                                {
+                                    b2.Property<int>("AddressCompanyId")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("int")
+                                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                                    b2.Property<string>("Address")
+                                        .HasColumnType("nvarchar(max)");
+
+                                    b2.Property<string>("Continent")
+                                        .HasColumnType("nvarchar(max)");
+
+                                    b2.Property<string>("Name")
+                                        .HasColumnType("nvarchar(max)");
+
+                                    b2.HasKey("AddressCompanyId");
+
+                                    b2.ToTable("Company");
+
+                                    b2.WithOwner()
+                                        .HasForeignKey("AddressCompanyId");
+                                });
                         });
                 });
 
